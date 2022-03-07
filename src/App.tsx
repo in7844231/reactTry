@@ -1,5 +1,6 @@
 import "./styles.css";
 import BackBtn from "./BackBtn";
+import styled from "styled-components";
 
 interface Banner {
   bannerPath: string;
@@ -7,6 +8,7 @@ interface Banner {
 
 interface Backbtn {
   path: string;
+  isDisplay: boolean;
 }
 
 const bannerObj: Banner = {
@@ -14,8 +16,13 @@ const bannerObj: Banner = {
 };
 
 const backBtnObj: Backbtn = {
-  path: "google.com"
+  path: "google.com",
+  isDisplay: true
 };
+
+const MainSection = styled.section`
+  margin: 10px 0;
+`;
 
 export default function App() {
   return (
@@ -26,9 +33,11 @@ export default function App() {
         <div className="bannerWrapper">
           <img src={bannerObj.bannerPath} className="bannerImg" alt="" />
         </div>
-        <div className="mainContainer">
-          <BackBtn path={backBtnObj.path} />
-        </div>
+        <MainSection>
+          <div className="mainContainer">
+            <BackBtn path={backBtnObj.path} isDisplay={true} />
+          </div>
+        </MainSection>
       </div>
     </div>
   );

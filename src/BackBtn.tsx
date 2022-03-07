@@ -2,23 +2,25 @@ import styled from "styled-components";
 
 interface Backbtn {
   path: string;
+  isDisplay: boolean;
 }
 
 interface StyledBackBtnProps {
-  margin?: string;
-  padding?: string;
+  isDisplay?: boolean;
 }
 
-const StyledBackBtn = styled.a<StyledBackBtnProps>`
-  margin: 15px 0;
-  padding: 15px;
+/*what is the useage when styled.a<TYPE?>*/
+const StyledBackBtn = styled.a`
+  display: ${(props: StyledBackBtnProps) =>
+    props.isDisplay ? "block" : "none"};
+  text-align: left;
 `;
 
 const Btn = (props: Backbtn) => {
   return (
     <>
-      <StyledBackBtn>
-        <a href={props.path}>&lt; back btn</a>
+      <StyledBackBtn href="#" isDisplay={props.isDisplay}>
+        &lt; back btn
       </StyledBackBtn>
     </>
   );
