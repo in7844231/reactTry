@@ -9,6 +9,11 @@ interface StyledBackBtnProps {
   isDisplay?: boolean;
 }
 
+interface LinkProps {
+  className?: string;
+  children?: string;
+}
+
 /*what is the useage when styled.a<TYPE?>*/
 const StyledBackBtn = styled.a`
   display: ${(props: StyledBackBtnProps) =>

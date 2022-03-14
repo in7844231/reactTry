@@ -1,6 +1,7 @@
 import "./styles.css";
 import BackBtn from "./BackBtn";
 import styled from "styled-components";
+import Intro from "./introduction";
 
 interface Banner {
   bannerPath: string;
@@ -37,6 +38,7 @@ export default function App() {
           <div className="mainContainer">
             <BackBtn path={backBtnObj.path} isDisplay={true} />
           </div>
+          <Intro />
         </MainSection>
       </div>
     </div>
